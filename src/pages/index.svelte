@@ -20,6 +20,7 @@
 	}
 </script>
 
+<div class="h-1 bg-green-300 sticky top-0" style="width: {data.length * 100 / 120}%"></div>
 <div class="py-7 w-[90%] md:w-[40%] mx-auto">
 	<h1 class="text-center text-3xl pb-2">Murajaah</h1>
 	{#each Array(30) as item, index}
