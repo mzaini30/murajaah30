@@ -18,6 +18,14 @@
 		data = [...data, x]
 		simpan()
 	}
+	function hapusData(){
+		const tanya = confirm('Hapus Semua Data?')
+		if (tanya) {
+			localStorage.removeItem('murajaah')
+			data = []
+			window.scrollTo(0, 0)
+		}
+	}
 </script>
 
 <div class="h-1 bg-green-300 sticky top-0" style="width: {data.length * 100 / 120}%"></div>
@@ -43,4 +51,5 @@
 			{/each}
 		</div>
 	{/each}
+	<a href="/" class="text-center text-red-500 pt-5 block" on:click|preventDefault={hapusData}>hapus data</a>
 </div>
