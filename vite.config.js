@@ -7,17 +7,26 @@ import { VitePWA } from 'vite-plugin-pwa'
 export default defineConfig({
   plugins: [
     VitePWA({
+      registerType: 'autoUpdate',
+      strategies: 'injectManifest',
+      filename: 'sw.ts',
+      srcDir: 'src',
       manifest: {
-        display: 'minimal-ui'
+        display: 'minimal-ui',
+        icons: [
+          {
+            src: "/quran.png",
+            sizes: "500x500",
+            type: "image/png"
+          }
+        ],
+        lang: 'id'
       }
     }),
 	  svelte({
 	  	preprocess: preprocess()
 	  }),
   ],
-  build: {
-      cssCodeSplit: false
-  },
   optimizeDeps: {
       exclude: [
           '@roxi/routify',
